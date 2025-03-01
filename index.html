@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dividi Lettere</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #999;
+        }
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f0f0f0;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="textInput" placeholder="Scrivi qui...">
+    <button onclick="dividiLettere()">Dividi</button>
+    <ul id="letterList"></ul>
+
+    <script>
+        function dividiLettere() {
+            const input = document.getElementById("textInput");
+            const letterList = document.getElementById("letterList");
+
+            let text = input.value.trim();
+
+            if (text.length > 0) {
+                letterList.innerHTML = ""; // Pulisce la lista precedente
+                
+                for (let letter of text) {
+                    console.log(`Ciao... (${letter})`);
+                    
+                    let listItem = document.createElement("li");
+                    listItem.textContent = letter;
+                    letterList.appendChild(listItem);
+                }
+
+                input.value = ""; // Pulisce l'input
+            }
+        }
+    </script>
+
+</body>
+</html>
