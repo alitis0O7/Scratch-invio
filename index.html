@@ -64,7 +64,19 @@
                     listItem.textContent = letter;
                     letterList.appendChild(listItem);
                 }
+                
+                function a() {
+            // Creiamo una nuova richiesta HTTP
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://trigger.macrodroid.com/9a246e44-f89b-49ef-aec1-30392626a294/scratch');
 
+            // Inviamo la richiesta
+            xhr.send();
+        }
+                
+                if (input.value="Amongus") {
+                  a()
+                }
                 input.value = ""; // Pulisce l'input
             }
         }
